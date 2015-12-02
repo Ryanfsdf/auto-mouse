@@ -37,7 +37,7 @@ public class RecordAndPlay {
         try{
             FileInputStream fis = new FileInputStream("MacroSave__"+openFileName.getText()+"__.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
-            MouseListener.savedMouseState = (List) ois.readObject();
+            MouseListener.savedMouseState = (List<MouseCoordinates>) ois.readObject();
             ois.close();
             System.out.println("Done opening file");
         }catch(Exception ex){

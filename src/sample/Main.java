@@ -24,6 +24,7 @@ public class Main extends Application {
         MouseListener globalMouseListener = new MouseListener();
         GlobalScreen.addNativeMouseListener(globalMouseListener);
         GlobalScreen.addNativeMouseMotionListener(globalMouseListener);
+        GlobalScreen.addNativeKeyListener(new KeyboardListener());
 
         try {
             GlobalScreen.registerNativeHook();
