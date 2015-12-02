@@ -17,6 +17,7 @@ public class MouseListener implements NativeMouseInputListener {
 
     public void nativeMouseClicked(NativeMouseEvent e) {
         System.out.println("Mouse Clicked: " + e.getClickCount());
+        mouseDoing = 3;
     }
 
     public void nativeMousePressed(NativeMouseEvent e) {
@@ -44,6 +45,11 @@ public class MouseListener implements NativeMouseInputListener {
             mouseState.add(mouseCoordinate);
             mouseDoing = 0;
         }
+        if (mouseDoing == 3 && RecordAndPlay.isRecording) {
+            mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 3);
+            mouseState.add(mouseCoordinate);
+            mouseDoing = 0;
+        }
     }
 
     public void nativeMouseDragged(NativeMouseEvent e) {
@@ -58,6 +64,11 @@ public class MouseListener implements NativeMouseInputListener {
         }
         if (mouseDoing == 2 && RecordAndPlay.isRecording) {
             mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 2);
+            mouseState.add(mouseCoordinate);
+            mouseDoing = 0;
+        }
+        if (mouseDoing == 3 && RecordAndPlay.isRecording) {
+            mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 3);
             mouseState.add(mouseCoordinate);
             mouseDoing = 0;
         }

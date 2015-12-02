@@ -21,6 +21,13 @@ public class TheRobot {
                     robot.mouseRelease(16);
                     robot.mouseMove(MouseListener.savedMouseState.get(x).getXCoordinate(), MouseListener.savedMouseState.get(x).getYCoordinate());
                 }
+                if (MouseListener.savedMouseState.get(x).getState() == 3) {
+                    robot.delay(10);
+                    robot.mousePress(16);
+                    robot.delay(10);
+                    robot.mouseRelease(16);
+                    robot.mouseMove(MouseListener.savedMouseState.get(x).getXCoordinate(), MouseListener.savedMouseState.get(x).getYCoordinate());
+                }
             }
         } catch (AWTException e) {
         }
