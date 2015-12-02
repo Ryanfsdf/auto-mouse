@@ -3,20 +3,20 @@ package sample;
 import java.io.Serializable;
 
 public class MouseCoordinates implements Serializable {
-    private int mouseXcoordinate;
-    private int mouseYcoordinate;
+    private int mouseXCoordinate;
+    private int mouseYCoordinate;
     private int mouseClickState;
 
     public MouseCoordinates(int x, int y, int z) {
-        mouseXcoordinate = x;
-        mouseYcoordinate = y;
+        mouseXCoordinate = x;
+        mouseYCoordinate = y;
         mouseClickState = z;
     }
     public int getXCoordinate() {
-        return mouseXcoordinate;
+        return mouseXCoordinate;
     }
     public int getYCoordinate() {
-        return mouseYcoordinate;
+        return mouseYCoordinate;
     }
     public int getState() {
         return mouseClickState;

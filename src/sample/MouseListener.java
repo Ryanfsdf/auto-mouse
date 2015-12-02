@@ -25,6 +25,7 @@ public class MouseListener implements NativeMouseInputListener {
         if (mouseDoing == 1 && RecordAndPlay.isRecording) {
             mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 1);
             mouseState.add(mouseCoordinate);
+            mouseDoing = 0;
         }
     }
 

@@ -30,7 +30,7 @@
         Save
     </Button>
     <Button GridPane.rowIndex="3"
-            fx:id="openButton"
+            fx:id="pressOpen"
             onAction="#startOpen">
         Open
     </Button>

@@ -13,8 +13,8 @@ public class RecordAndPlay {
 
     public static boolean isRecording = false;
 
-    @FXML private static TextField saveFileName = new TextField();
-    @FXML private static TextField openFileName = new TextField();
+    @FXML static TextField saveFileName = new TextField();
+    @FXML static TextField openFileName = new TextField();
 
     public static void recordMovement() {
         isRecording = true;
