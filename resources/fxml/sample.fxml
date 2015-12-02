@@ -7,38 +7,38 @@
 <GridPane fx:controller="sample.Controller"
           stylesheets="/css/sample.css"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    <Button GridPane.rowIndex="1"
+    <Button GridPane.rowIndex="0"
             fx:id="pressRecord"
             onAction="#startRecord">
         Record
     </Button>
-    <Button GridPane.rowIndex="1"
+    <Button GridPane.rowIndex="0"
             fx:id="pressStop"
             onAction="#startStop"
             visible="false">
         Stop
     </Button>
-    <Button GridPane.rowIndex="2"
+    <Button GridPane.rowIndex="1"
             fx:id="pressPlay"
             onAction="#startPlay"
             visible="false">
         Play
     </Button>
-    <Button GridPane.rowIndex="3"
+    <Button GridPane.rowIndex="2"
             fx:id="pressSave"
             onAction="#startSave">
         Save
     </Button>
-    <Button GridPane.rowIndex="4"
+    <Button GridPane.rowIndex="3"
             fx:id="openButton"
             onAction="#startOpen">
         Open
     </Button>
-    <TextField GridPane.rowIndex="3"
+    <TextField GridPane.rowIndex="2"
                GridPane.columnIndex="2"
                fx:id="saveFileName">
     </TextField>
-    <TextField GridPane.rowIndex="4"
+    <TextField GridPane.rowIndex="3"
                GridPane.columnIndex="2"
                fx:id="openFileName">
     </TextField>

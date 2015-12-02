@@ -34,9 +34,11 @@ public class Controller {
     }
 
     public void startSave(ActionEvent actionEvent) {
+        RecordAndPlay.saveFile();
     }
 
     public void startOpen(ActionEvent actionEvent) {
+        RecordAndPlay.openFile();
     }
 
 

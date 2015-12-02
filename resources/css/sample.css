@@ -1,6 +1,9 @@
 #pressRecord {
     -fx-background-color: red;
 }
+#pressStop {
+    -fx-background-color:red;
+}
 #pressPlay {
     -fx-background-color: green;
 }

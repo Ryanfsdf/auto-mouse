@@ -7,11 +7,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecordAndPlay {
+
     public static boolean isRecording = false;
+
     @FXML private static TextField saveFileName = new TextField();
     @FXML private static TextField openFileName = new TextField();
 
@@ -23,10 +24,9 @@ public class RecordAndPlay {
     }
     public static void saveFile() {
         try{
-            FileOutputStream fos = new FileOutputStream(saveFileName.getText()+".txt");
+            FileOutputStream fos = new FileOutputStream("MacroSave__"+saveFileName.getText()+"__.txt");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(MouseListener.mouseState);
-            MouseListener.mouseState = new ArrayList<>();
+            oos.writeObject(MouseListener.savedMouseState);
             oos.close();
             System.out.println("Done saving file");
         }catch(Exception ex){
@@ -35,10 +35,9 @@ public class RecordAndPlay {
     }
     public static void openFile() {
         try{
-            FileInputStream fis = new FileInputStream(openFileName.getText()+"txt");
+            FileInputStream fis = new FileInputStream("MacroSave__"+openFileName.getText()+"__.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
-            MouseListener.mouseState = (List) ois.readObject();
-            MouseListener.mouseState = new ArrayList<>();
+            MouseListener.savedMouseState = (List) ois.readObject();
             ois.close();
             System.out.println("Done opening file");
         }catch(Exception ex){
