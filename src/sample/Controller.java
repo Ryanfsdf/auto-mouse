@@ -25,7 +25,7 @@ public class Controller {
         pressStop.setVisible(false);
         pressPlay.setVisible(true);
         for(int x = 0; x < MouseListener.mouseState.size()-1; x++) {
-            MouseListener.savedMouseState.add(x,MouseListener.mouseState.get(x));
+            MouseListener.savedMouseState.add(x,MouseListener.mouseState.get(x+1));
         }
         MouseListener.mouseState = new ArrayList<>();
     }

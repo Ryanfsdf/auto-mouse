@@ -7,7 +7,7 @@ public class KeyboardListener implements NativeKeyListener {
 
     public void nativeKeyPressed(NativeKeyEvent e) {
         String keyChecker =  NativeKeyEvent.getKeyText(e.getKeyCode());
-        if (keyChecker == "NumPad Subtract") {
+        if (keyChecker == "NumPad Subtract" && RecordAndPlay.isRecording == false) {
             TheRobot.moveMouse();
         }
         System.out.println(keyChecker);
