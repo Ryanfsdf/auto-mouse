@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
 
@@ -11,6 +12,8 @@ public class Controller {
     @FXML Button pressRecord = new Button();
     @FXML Button pressStop = new Button();
     @FXML Button pressPlay = new Button();
+    @FXML TextField saveFileName = new TextField();
+    @FXML TextField openFileName = new TextField();
 
     public void startRecord(ActionEvent actionEvent) {
         RecordAndPlay.recordMovement();

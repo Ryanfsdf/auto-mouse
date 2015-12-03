@@ -1,8 +1,5 @@
 package sample;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -13,9 +10,6 @@ public class RecordAndPlay {
 
     public static boolean isRecording = false;
 
-    @FXML static TextField saveFileName = new TextField();
-    @FXML static TextField openFileName = new TextField();
-
     public static void recordMovement() {
         isRecording = true;
     }
@@ -24,7 +18,7 @@ public class RecordAndPlay {
     }
     public static void saveFile() {
         try{
-            FileOutputStream fos = new FileOutputStream("MacroSave__"+saveFileName.getText()+"__.txt");
+            FileOutputStream fos = new FileOutputStream("MacroSave__"/*+saveFileName.getText()*/+"__.txt");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(MouseListener.savedMouseState);
             oos.close();
@@ -35,7 +29,7 @@ public class RecordAndPlay {
     }
     public static void openFile() {
         try{
-            FileInputStream fis = new FileInputStream("MacroSave__"+openFileName.getText()+"__.txt");
+            FileInputStream fis = new FileInputStream("MacroSave__"/*+openFileName.getText()*/+"__.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
             MouseListener.savedMouseState = (List<MouseCoordinates>) ois.readObject();
             ois.close();
