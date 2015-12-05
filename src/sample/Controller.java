@@ -51,6 +51,7 @@ public class Controller {
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
+            displayMessage.alertBox("File Saved", "Saved");
         }
         else {
             displayMessage.errorBox("File Already Exist", "Error");
@@ -72,6 +73,7 @@ public class Controller {
             pressRecord.setVisible(true);
             pressStop.setVisible(false);
             pressPlay.setVisible(true);
+            displayMessage.alertBox("File Opened", "Opened");
         }
         else {
             displayMessage.errorBox("File Does Not Exist", "Error");

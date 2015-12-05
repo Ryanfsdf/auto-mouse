@@ -19,4 +19,18 @@ public class displayMessage
         alert.setContentText(infoMessage);
         alert.showAndWait();
     }
+
+    public static void alertBox(String infoMessage, String titleBar)
+    {
+        alertBox(infoMessage, titleBar, null);
+    }
+
+    public static void alertBox(String infoMessage, String titleBar, String headerMessage)
+    {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle(titleBar);
+        alert.setHeaderText(headerMessage);
+        alert.setContentText(infoMessage);
+        alert.showAndWait();
+    }
 }

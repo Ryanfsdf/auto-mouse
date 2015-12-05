@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaMacroFinal:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaMacroFinal_jar</output-path>
+    <root id="archive" name="JavaMacroFinal.jar">
+      <element id="module-output" name="JavaMacroFinal" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/JNativeHook-2.0.3/JNativeHook/jar/jnativehook-2.0.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
