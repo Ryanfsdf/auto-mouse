@@ -34,7 +34,7 @@ public class MouseListener implements NativeMouseInputListener {
     }
 
     public void nativeMouseMoved(NativeMouseEvent e) {
-        if (mouseDoing == 0 && RecordAndPlay.isRecording) {
+        /*if (mouseDoing == 0 && RecordAndPlay.isRecording) {
             mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 0);
             mouseState.add(mouseCoordinate);
         }
@@ -52,11 +52,34 @@ public class MouseListener implements NativeMouseInputListener {
             mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 3);
             mouseState.add(mouseCoordinate);
             mouseDoing = 0;
+        }*/
+        if(RecordAndPlay.isRecording) {
+            switch(mouseDoing) {
+                case 0:
+                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 0);
+                    mouseState.add(mouseCoordinate);
+                    break;
+                case 1:
+                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 1);
+                    mouseState.add(mouseCoordinate);
+                    mouseDoing = 0;
+                    break;
+                case 2:
+                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 2);
+                    mouseState.add(mouseCoordinate);
+                    mouseDoing = 0;
+                    break;
+                case 3:
+                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 3);
+                    mouseState.add(mouseCoordinate);
+                    mouseDoing = 0;
+                    break;
+            }
         }
     }
 
     public void nativeMouseDragged(NativeMouseEvent e) {
-        if (mouseDoing == 0 && RecordAndPlay.isRecording) {
+        /*if (mouseDoing == 0 && RecordAndPlay.isRecording) {
             mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 0);
             mouseState.add(mouseCoordinate);
         }
@@ -69,6 +92,24 @@ public class MouseListener implements NativeMouseInputListener {
             mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 2);
             mouseState.add(mouseCoordinate);
             mouseDoing = 0;
+        }*/
+        if(RecordAndPlay.isRecording) {
+            switch(mouseDoing) {
+                case 0:
+                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 0);
+                    mouseState.add(mouseCoordinate);
+                    break;
+                case 1:
+                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 1);
+                    mouseState.add(mouseCoordinate);
+                    mouseDoing = 0;
+                    break;
+                case 2:
+                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 2);
+                    mouseState.add(mouseCoordinate);
+                    mouseDoing = 0;
+                    break;
+            }
         }
     }
 }

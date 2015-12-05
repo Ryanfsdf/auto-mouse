@@ -3,14 +3,10 @@ package sample;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,17 +52,20 @@ public class Controller {
     }
 
     public void startOpen(ActionEvent actionEvent) {
-        try{
-            FileInputStream fis = new FileInputStream("MacroSave__"+openFileName.getText()+"__.txt");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            MouseListener.savedMouseState = (List<MouseCoordinates>) ois.readObject();
-            ois.close();
-            System.out.println("Done opening file");
-        }catch(Exception ex){
-            ex.printStackTrace();
+        File checkOpen = new File("MacroSave__"+openFileName.getText()+"__.txt");
+        if(checkOpen.exists()) {
+            try{
+                FileInputStream fis = new FileInputStream("MacroSave__"+openFileName.getText()+"__.txt");
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                MouseListener.savedMouseState = (List<MouseCoordinates>) ois.readObject();
+                ois.close();
+                System.out.println("Done opening file");
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            pressRecord.setVisible(true);
+            pressStop.setVisible(false);
+            pressPlay.setVisible(true);
         }
-        pressRecord.setVisible(true);
-        pressStop.setVisible(false);
-        pressPlay.setVisible(true);
     }
 }
