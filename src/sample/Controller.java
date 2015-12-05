@@ -3,10 +3,16 @@ package sample;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
     @FXML Button pressRecord = new Button();
@@ -14,6 +20,7 @@ public class Controller {
     @FXML Button pressPlay = new Button();
     @FXML TextField saveFileName = new TextField();
     @FXML TextField openFileName = new TextField();
+
 
     public void startRecord(ActionEvent actionEvent) {
         RecordAndPlay.recordMovement();
@@ -37,12 +44,29 @@ public class Controller {
     }
 
     public void startSave(ActionEvent actionEvent) {
-        RecordAndPlay.saveFile();
+        try{
+            FileOutputStream fos = new FileOutputStream("MacroSave__"+saveFileName.getText()+"__.txt");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(MouseListener.savedMouseState);
+            oos.close();
+            System.out.println("Done saving file");
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     public void startOpen(ActionEvent actionEvent) {
-        RecordAndPlay.openFile();
+        try{
+            FileInputStream fis = new FileInputStream("MacroSave__"+openFileName.getText()+"__.txt");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            MouseListener.savedMouseState = (List<MouseCoordinates>) ois.readObject();
+            ois.close();
+            System.out.println("Done opening file");
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        pressRecord.setVisible(true);
+        pressStop.setVisible(false);
+        pressPlay.setVisible(true);
     }
-
-
 }
