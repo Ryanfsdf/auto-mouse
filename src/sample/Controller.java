@@ -40,14 +40,20 @@ public class Controller {
     }
 
     public void startSave(ActionEvent actionEvent) {
-        try{
-            FileOutputStream fos = new FileOutputStream("MacroSave__"+saveFileName.getText()+"__.txt");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(MouseListener.savedMouseState);
-            oos.close();
-            System.out.println("Done saving file");
-        }catch(Exception ex){
-            ex.printStackTrace();
+        File checkOpen = new File("MacroSave__"+saveFileName.getText()+"__.txt");
+        if(!checkOpen.exists()) {
+            try {
+                FileOutputStream fos = new FileOutputStream("MacroSave__" + saveFileName.getText() + "__.txt");
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(MouseListener.savedMouseState);
+                oos.close();
+                System.out.println("Done saving file");
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        else {
+            displayMessage.errorBox("File Already Exist", "Error");
         }
     }
 
@@ -66,6 +72,9 @@ public class Controller {
             pressRecord.setVisible(true);
             pressStop.setVisible(false);
             pressPlay.setVisible(true);
+        }
+        else {
+            displayMessage.errorBox("File Does Not Exist", "Error");
         }
     }
 }

@@ -1,1 +1,0 @@
-doesnt work because when mouse is pressed and released without moving, it is only processed as a release and not a press+release

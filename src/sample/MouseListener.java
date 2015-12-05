@@ -12,7 +12,7 @@ public class MouseListener implements NativeMouseInputListener {
     public static List<MouseCoordinates> mouseState = new ArrayList<>();
     public static List<MouseCoordinates> savedMouseState = new ArrayList<>();
     public static MouseCoordinates mouseCoordinate;
-    //0 is moving, 1 is pressed, 2 is released
+    //0 is moving, 1 is pressed, 2 is released, 3 is click
     int mouseDoing = 0;
 
     public void nativeMouseClicked(NativeMouseEvent e) {
