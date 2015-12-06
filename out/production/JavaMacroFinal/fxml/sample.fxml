@@ -26,7 +26,8 @@
     </Button>
     <Button GridPane.rowIndex="2"
             fx:id="pressSave"
-            onAction="#startSave">
+            onAction="#startSave"
+            visible="false">
         Save
     </Button>
     <Button GridPane.rowIndex="3"
@@ -36,7 +37,8 @@
     </Button>
     <TextField GridPane.rowIndex="2"
                GridPane.columnIndex="2"
-               fx:id="saveFileName">
+               fx:id="saveFileName"
+               visible="false">
     </TextField>
     <TextField GridPane.rowIndex="3"
                GridPane.columnIndex="2"

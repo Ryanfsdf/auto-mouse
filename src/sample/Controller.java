@@ -14,6 +14,8 @@ public class Controller {
     @FXML Button pressRecord = new Button();
     @FXML Button pressStop = new Button();
     @FXML Button pressPlay = new Button();
+    @FXML Button pressSave = new Button();
+    @FXML Button pressOpen = new Button();
     @FXML TextField saveFileName = new TextField();
     @FXML TextField openFileName = new TextField();
 
@@ -23,6 +25,10 @@ public class Controller {
         pressRecord.setVisible(false);
         pressStop.setVisible(true);
         pressPlay.setVisible(false);
+        saveFileName.setVisible(false);
+        openFileName.setVisible(false);
+        pressSave.setVisible(false);
+        pressOpen.setVisible(false);
         MouseListener.savedMouseState = new ArrayList<>();
     }
     public void startStop(ActionEvent actionEvent) {
@@ -30,6 +36,10 @@ public class Controller {
         pressRecord.setVisible(true);
         pressStop.setVisible(false);
         pressPlay.setVisible(true);
+        saveFileName.setVisible(true);
+        openFileName.setVisible(true);
+        pressSave.setVisible(true);
+        pressOpen.setVisible(true);
         for(int x = 0; x < MouseListener.mouseState.size()-1; x++) {
             MouseListener.savedMouseState.add(x,MouseListener.mouseState.get(x+1));
         }

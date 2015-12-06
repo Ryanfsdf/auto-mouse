@@ -11,7 +11,6 @@ public class MouseListener implements NativeMouseInputListener {
 
     public static List<MouseCoordinates> mouseState = new ArrayList<>();
     public static List<MouseCoordinates> savedMouseState = new ArrayList<>();
-    public static MouseCoordinates mouseCoordinate;
     //0 is moving, 1 is pressed, 2 is released, 3 is click
     int mouseDoing = 0;
 
@@ -56,22 +55,18 @@ public class MouseListener implements NativeMouseInputListener {
         if(RecordAndPlay.isRecording) {
             switch(mouseDoing) {
                 case 0:
-                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 0);
-                    mouseState.add(mouseCoordinate);
+                    mouseState.add(new MouseCoordinates(e.getX(), e.getY(), 0));
                     break;
                 case 1:
-                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 1);
-                    mouseState.add(mouseCoordinate);
+                    mouseState.add(new MouseCoordinates(e.getX(), e.getY(), 1));
                     mouseDoing = 0;
                     break;
                 case 2:
-                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 2);
-                    mouseState.add(mouseCoordinate);
+                    mouseState.add(new MouseCoordinates(e.getX(), e.getY(), 2));
                     mouseDoing = 0;
                     break;
                 case 3:
-                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 3);
-                    mouseState.add(mouseCoordinate);
+                    mouseState.add(new MouseCoordinates(e.getX(), e.getY(), 3));
                     mouseDoing = 0;
                     break;
             }
@@ -96,17 +91,14 @@ public class MouseListener implements NativeMouseInputListener {
         if(RecordAndPlay.isRecording) {
             switch(mouseDoing) {
                 case 0:
-                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 0);
-                    mouseState.add(mouseCoordinate);
+                    mouseState.add(new MouseCoordinates(e.getX(), e.getY(), 0));
                     break;
                 case 1:
-                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 1);
-                    mouseState.add(mouseCoordinate);
+                    mouseState.add(new MouseCoordinates(e.getX(), e.getY(), 1));
                     mouseDoing = 0;
                     break;
                 case 2:
-                    mouseCoordinate = new MouseCoordinates(e.getX(), e.getY(), 2);
-                    mouseState.add(mouseCoordinate);
+                    mouseState.add(new MouseCoordinates(e.getX(), e.getY(), 2));
                     mouseDoing = 0;
                     break;
             }

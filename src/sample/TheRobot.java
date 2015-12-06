@@ -12,14 +12,17 @@ public class TheRobot {
                     robot.mouseMove(MouseListener.savedMouseState.get(x).getXCoordinate(), MouseListener.savedMouseState.get(x).getYCoordinate());
                 }
                 else if (MouseListener.savedMouseState.get(x).getState() == 1) {
+                    robot.delay(75);
                     robot.mousePress(16);
                     robot.mouseMove(MouseListener.savedMouseState.get(x).getXCoordinate(), MouseListener.savedMouseState.get(x).getYCoordinate());
                 }
                 else if (MouseListener.savedMouseState.get(x).getState() == 2) {
+                    robot.delay(75);
                     robot.mouseRelease(16);
                     robot.mouseMove(MouseListener.savedMouseState.get(x).getXCoordinate(), MouseListener.savedMouseState.get(x).getYCoordinate());
                 }
                 else/* if (MouseListener.savedMouseState.get(x).getState() == 3) */{
+                    robot.delay(75);
                     robot.mousePress(16);
                     robot.mouseRelease(16);
                     robot.mouseMove(MouseListener.savedMouseState.get(x).getXCoordinate(), MouseListener.savedMouseState.get(x).getYCoordinate());
