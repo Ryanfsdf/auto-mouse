@@ -8,7 +8,7 @@ public class TheRobot {
             Robot robot = new Robot();
             for (int x = 0; x < MouseListener.savedMouseState.size() - 1; x++) {
                 if (MouseListener.savedMouseState.get(x).getState() == 0) {
-                    robot.delay(10);
+                    robot.delay(5);
                     robot.mouseMove(MouseListener.savedMouseState.get(x).getXCoordinate(), MouseListener.savedMouseState.get(x).getYCoordinate());
                 }
                 else if (MouseListener.savedMouseState.get(x).getState() == 1) {
