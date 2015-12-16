@@ -7,14 +7,16 @@ public class KeyboardListener implements NativeKeyListener {
 
     public void nativeKeyPressed(NativeKeyEvent e) {
         String keyChecker =  NativeKeyEvent.getKeyText(e.getKeyCode());
-        if (keyChecker.equals("NumPad Subtract") && !RecordAndPlay.isRecording) {
+        if (keyChecker.equals("F12") && !RecordAndPlay.isRecording) {
             TheRobot.moveMouse();
         }
-        System.out.println(keyChecker);
+        MouseListener.mouseState.add(new MouseCoordinates(e.getKeyCode(), 0, 4));
     }
 
     public void nativeKeyReleased(NativeKeyEvent e) {
         System.out.println("Key Released: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
+        MouseListener.mouseState.add(new MouseCoordinates(((int) NativeKeyEvent.getKeyText(e.getKeyCode()).charAt(0)), 0, 4));
+        System.out.println((int) NativeKeyEvent.getKeyText(e.getKeyCode()).charAt(0));
     }
 
     public void nativeKeyTyped(NativeKeyEvent e) {
