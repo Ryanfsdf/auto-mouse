@@ -9,7 +9,7 @@ public class TheRobot {
             for (int x = 0; x < MouseListener.savedMouseState.size() - 1; x++) {
                 if (MouseListener.savedMouseState.get(x).getState() == 0) {
                     try {
-                        Thread.sleep(5);
+                        Thread.sleep(50);
                     }
                     catch (InterruptedException ie) {
                     }
