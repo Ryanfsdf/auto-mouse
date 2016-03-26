@@ -1,4 +1,4 @@
-# Java-Replay
+# JavaReplay
 
 To use the program, press record and move the mouse around.
 To save the recording, enter a save file name and click save.
