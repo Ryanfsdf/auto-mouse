@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="JavaMacroFinal:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/JavaMacroFinal_jar</output-path>
-    <root id="archive" name="JavaMacroFinal.jar">
+  <artifact type="jar" name="AutoMouse">
+    <output-path>$PROJECT_DIR$/out/artifacts/AutoMouse</output-path>
+    <root id="archive" name="AutoMouse.jar">
       <element id="module-output" name="AutoMouse" />
       <element id="extracted-dir" path="$PROJECT_DIR$/JNativeHook-2.0.3/JNativeHook/jar/jnativehook-2.0.3.jar" path-in-jar="/" />
     </root>
