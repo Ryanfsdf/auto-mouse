@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JavaMacroFinal.iml" filepath="$PROJECT_DIR$/JavaMacroFinal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AutoMouse.iml" filepath="$PROJECT_DIR$/AutoMouse.iml" />
     </modules>
   </component>
 </project>
