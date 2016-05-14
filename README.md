@@ -1,6 +1,6 @@
 # AutoMouse
 
-AutoMouse is a mouse recording program that helps to automate simple repetitive tasks. It plays back any recorded
+AutoMouse is a mouse recording program written in Java that helps to automate simple repetitive tasks. It plays back any recorded
 mouse movements at an adjustable speed and works by using the JNativeHook external library for global event capturing.
 
 HOW TO USE: To use the program, press record and move the mouse around. Press stop when you want the recording to end.
